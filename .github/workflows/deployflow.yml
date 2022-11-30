@@ -24,9 +24,6 @@ jobs:
         run: yarn
         shell: bash
       - name: Build code
-        env:
-          VITE_APP_NAME: ${{ secrets.VITE_APP_NAME }}
-          VITE_ENCRYPT_KEY: ${{ secrets.VITE_ENCRYPT_KEY }}
         run: yarn build
         shell: bash
       - name: Setup Pages
