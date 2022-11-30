@@ -10,8 +10,8 @@ import classnames, {
   alignItems,
   display,
   flexDirection,
+  height,
   justifyContent,
-  minHeight,
 } from 'classnames/tailwind'
 import videojs from 'video.js'
 
@@ -27,7 +27,8 @@ const container = classnames(
   display('flex'),
   flexDirection('flex-col'),
   justifyContent('justify-center'),
-  alignItems('items-start')
+  alignItems('items-start'),
+  height('h-96')
 )
 export default function () {
   const [errorPlaying, setErrorPlaying] = useState('')
