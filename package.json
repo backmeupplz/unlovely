@@ -23,8 +23,11 @@
     ]
   },
   "dependencies": {
+    "@types/video.js": "^7.3.49",
     "@vitejs/plugin-react": "^2.2.0",
-    "preact": "^10.11.3"
+    "amazon-ivs-player": "^1.14.0",
+    "preact": "^10.11.3",
+    "video.js": "^7.20.3"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
