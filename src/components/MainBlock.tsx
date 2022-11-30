@@ -1,6 +1,4 @@
-import { BodyText, HeaderText } from 'components/Text'
-import { Suspense } from 'preact/compat'
-import UserCount from 'components/UserCount'
+import { LogoText } from 'components/Text'
 import classnames, {
   alignItems,
   display,
@@ -13,16 +11,13 @@ const container = classnames(
   display('flex'),
   flexDirection('flex-col'),
   justifyContent('justify-center'),
-  alignItems('items-center'),
+  alignItems('items-start'),
   space('space-y-2')
 )
 export default function () {
   return (
     <div className={container}>
-      <HeaderText>Frontend Template</HeaderText>
-      <Suspense fallback={<BodyText>Loading...</BodyText>}>
-        <UserCount />
-      </Suspense>
+      <LogoText>Unlovely</LogoText>
     </div>
   )
 }

@@ -24,9 +24,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^2.2.0",
-    "preact": "^10.11.3",
-    "unfetch": "^4.2.0",
-    "valtio": "^1.7.6"
+    "preact": "^10.11.3"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
@@ -43,7 +41,6 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
-    "eslint-plugin-valtio": "^0.6.1",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "react-scripts": "^5.0.1",

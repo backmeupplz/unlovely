@@ -1,26 +1,27 @@
 import {
+  backgroundClip,
+  backgroundImage,
   classnames,
   fontSize,
   fontWeight,
-  textAlign,
+  gradientColorStops,
   textColor,
 } from 'classnames/tailwind'
 import ChildrenProp from 'models/ChildrenProp'
 
-const whiteText = classnames(textColor('text-white'))
-const grayText = classnames(textColor('text-gray-300'))
-
-const headerText = classnames(
-  whiteText,
-  fontSize('text-3xl', 'md:text-6xl'),
-  fontWeight('font-bold'),
-  textAlign('text-center')
+const logoText = classnames(
+  textColor('text-transparent'),
+  backgroundClip('bg-clip-text'),
+  backgroundImage('bg-gradient-to-bl'),
+  gradientColorStops('from-slate-500', 'via-slate-400', 'to-violet-300'),
+  fontSize('text-3xl'),
+  fontWeight('font-bold')
 )
-export function HeaderText({ children }: ChildrenProp) {
-  return <p className={headerText}>{children}</p>
+export function LogoText({ children }: ChildrenProp) {
+  return <p className={logoText}>{children}</p>
 }
 
-const bodyText = classnames(grayText, textAlign('text-center'))
+const bodyText = classnames(textColor('text-gray-300'))
 export function BodyText({ children }: ChildrenProp) {
   return <p className={bodyText}>{children}</p>
 }
