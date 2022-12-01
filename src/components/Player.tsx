@@ -10,6 +10,7 @@ import classnames, {
   alignItems,
   display,
   flexDirection,
+  flexGrow,
   height,
   justifyContent,
 } from 'classnames/tailwind'
@@ -28,7 +29,8 @@ const container = classnames(
   flexDirection('flex-col'),
   justifyContent('justify-center'),
   alignItems('items-start'),
-  height('h-1/2', 'md:h-96')
+  height('h-1/2', 'md:h-96'),
+  flexGrow('grow-0', 'md:grow')
 )
 export default function () {
   const [errorPlaying, setErrorPlaying] = useState('')
