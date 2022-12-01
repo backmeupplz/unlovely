@@ -99,22 +99,21 @@ export default function () {
       <div className={container}>
         <TextareaAutosize
           value={text}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
+            if (e.currentTarget?.value.endsWith('\n')) {
+              publishText()
+              return
+            }
             setText(e.currentTarget?.value.replace('\n', ''))
-          }
+          }}
           className={textArea}
           maxRows={3}
           placeholder={`${user?.username || shortify(user?.address)} says...`}
-          onKeyPress={(e: KeyboardEvent) => {
-            if (e.key === 'Enter' && isValid) {
-              publishText()
-            }
-          }}
         />
         <div
           className={button(!isValid)}
           onClick={() => {
-            publishText()
+            if (isValid) publishText()
           }}
         >
           <ArrowSmallRightIcon className={icon} />
