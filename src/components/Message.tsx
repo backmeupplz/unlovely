@@ -13,7 +13,7 @@ const pill = (isDark: boolean) =>
     display('inline'),
     padding('px-1'),
     borderRadius('rounded'),
-    backgroundColor(isDark ? 'bg-indigo-200' : 'bg-indigo-900')
+    backgroundColor(isDark ? 'bg-indigo-300' : 'bg-indigo-900')
   )
 
 export default function ({ message }: { message: Types.Message }) {

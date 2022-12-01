@@ -23,11 +23,13 @@
     ]
   },
   "dependencies": {
+    "@apollo/client": "^3.7.1",
     "@rainbow-me/rainbowkit": "^0.8.0",
     "@vitejs/plugin-react": "^2.2.0",
     "ably": "^1.2.33",
     "amazon-ivs-player": "^1.14.0",
     "ethers": "^5.7.2",
+    "graphql": "^16.6.0",
     "preact": "^10.11.3",
     "video.js": "^7.20.3",
     "wagmi": "^0.8.8"

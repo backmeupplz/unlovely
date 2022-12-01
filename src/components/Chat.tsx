@@ -1,5 +1,6 @@
 import { BodyText } from 'components/Text'
 import { useEffect, useRef, useState } from 'preact/hooks'
+import ChatForm from 'components/ChatForm'
 import Message from 'components/Message'
 import classnames, {
   alignItems,
@@ -69,6 +70,7 @@ export default function () {
         ))}
         <div ref={messagesEndRef} />
       </div>
+      <ChatForm />
     </div>
   )
 }
