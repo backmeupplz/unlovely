@@ -28,7 +28,7 @@ const container = classnames(
   flexDirection('flex-col'),
   justifyContent('justify-center'),
   alignItems('items-start'),
-  height('h-96')
+  height('h-1/2', 'md:h-96')
 )
 export default function () {
   const [errorPlaying, setErrorPlaying] = useState('')
