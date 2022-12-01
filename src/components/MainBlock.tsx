@@ -11,6 +11,7 @@ import classnames, {
   height,
   justifyContent,
   maxHeight,
+  opacity,
 } from 'classnames/tailwind'
 
 const container = classnames(
@@ -55,7 +56,7 @@ export default function () {
         <Player />
         <Chat />
       </div>
-      <div className={hiddenUnderMd}>
+      <div className={classnames(hiddenUnderMd, opacity('opacity-40'))}>
         <BodyText>
           Made with love by <Link href="https://bdut.ch">@borodutch</Link>,
           Unlovely is{' '}
