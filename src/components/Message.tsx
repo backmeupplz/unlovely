@@ -7,6 +7,7 @@ import classnames, {
   padding,
 } from 'classnames/tailwind'
 import isDarkColor from 'helpers/isDarkColor'
+import shortify from 'helpers/shortify'
 
 const pill = (isDark: boolean) =>
   classnames(
@@ -24,10 +25,7 @@ export default function ({ message }: { message: Types.Message }) {
     <BodyText>
       <div className={pill(isDarkColor(message.data.chatColor))}>
         <span style={{ color: message.data.chatColor || undefined }}>
-          {message.data.username ||
-            `${message.data.address.slice(0, 6)}...${message.data.address.slice(
-              -4
-            )}`}
+          {message.data.username || shortify(message.data.address)}
         </span>
       </div>
       : {message.data.messageText}

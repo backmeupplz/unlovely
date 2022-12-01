@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
+    "@heroicons/react": "^2.0.13",
     "@rainbow-me/rainbowkit": "^0.8.0",
     "@vitejs/plugin-react": "^2.2.0",
     "ably": "^1.2.33",
@@ -31,12 +32,15 @@
     "ethers": "^5.7.2",
     "graphql": "^16.6.0",
     "preact": "^10.11.3",
+    "randomcolor": "^0.6.2",
+    "react-autosize-textarea": "^7.1.0",
     "video.js": "^7.20.3",
     "wagmi": "^0.8.8"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
     "@types/node": "^18.11.10",
+    "@types/randomcolor": "^0.5.7",
     "@types/video.js": "^7.3.50",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",

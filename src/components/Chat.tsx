@@ -4,11 +4,13 @@ import ChatForm from 'components/ChatForm'
 import Message from 'components/Message'
 import classnames, {
   alignItems,
+  backgroundColor,
   borderColor,
   borderRadius,
   borderWidth,
   display,
   flexDirection,
+  flexGrow,
   gap,
   height,
   justifyContent,
@@ -37,6 +39,11 @@ const chatContainer = classnames(
   gap('gap-2'),
   overflow('overflow-y-scroll')
 )
+const messageContanier = classnames(
+  padding('py-1', 'px-2'),
+  backgroundColor('bg-indigo-900'),
+  borderRadius('rounded')
+)
 export default function () {
   const { messages, loading } = useMessages()
   const [scrollEnabled, setScrollEnabled] = useState(true)
@@ -63,14 +70,16 @@ export default function () {
   }, [chatContainerRef])
   return (
     <div className={container}>
-      <BodyText>Chat:{loading && ' (loading...)'}</BodyText>
+      <div className={messageContanier}>
+        <BodyText>Chat:{loading && ' (loading...)'}</BodyText>
+      </div>
       <div className={chatContainer} ref={chatContainerRef}>
         {messages.map((message) => (
           <Message message={message} key={message.id} />
         ))}
         <div ref={messagesEndRef} />
       </div>
-      <ChatForm />
+      {!loading && <ChatForm />}
     </div>
   )
 }
