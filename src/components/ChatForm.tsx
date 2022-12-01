@@ -72,37 +72,45 @@ export default function () {
   useEffect(() => {
     setIsValid(text.length > 0)
   }, [text])
+  function publishText() {
+    setText('')
+    void ablyChannel.publish({
+      name: 'chat-message',
+      data: {
+        messageText: text,
+        username: user.username,
+        chatColor: randomcolor({
+          luminosity: 'dark',
+          seed: user.username || user.address,
+        }),
+        isFC: user.isFCUser,
+        address: user.address,
+        powerUserLvl: user.powerUserLvl,
+        videoSavantLvl: user.videoSavantLvl,
+        isGif: false,
+        reactions,
+      },
+    })
+  }
   if (user && !loading && !error) {
     return (
       <div className={container}>
         <TextareaAutosize
           value={text}
-          onChange={(e: any) => setText(e.target?.value)}
+          onChange={(e: any) => setText(e.target?.value.replace('\n', ''))}
           className={textArea}
           maxRows={3}
           placeholder={`${user?.username || shortify(user?.address)} says...`}
+          onKeyPress={(e: any) => {
+            if (e.key === 'Enter' && isValid) {
+              publishText()
+            }
+          }}
         />
         <div
           className={button(!isValid)}
           onClick={() => {
-            setText('')
-            void ablyChannel.publish({
-              name: 'chat-message',
-              data: {
-                messageText: text,
-                username: user.username,
-                chatColor: randomcolor({
-                  luminosity: 'dark',
-                  seed: user.username || user.address,
-                }),
-                isFC: user.isFCUser,
-                address: user.address,
-                powerUserLvl: user.powerUserLvl,
-                videoSavantLvl: user.videoSavantLvl,
-                isGif: false,
-                reactions,
-              },
-            })
+            publishText()
           }}
         >
           <ArrowSmallRightIcon className={icon} />
