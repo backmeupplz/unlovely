@@ -1,5 +1,5 @@
+import { BodyText, Link, LogoText } from 'components/Text'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { LogoText } from 'components/Text'
 import Chat from 'components/Chat'
 import Player from 'components/Player'
 import classnames, {
@@ -54,6 +54,16 @@ export default function () {
         </div>
         <Player />
         <Chat />
+      </div>
+      <div className={hiddenUnderMd}>
+        <BodyText>
+          Made with love by <Link href="https://bdut.ch">@borodutch</Link>,
+          Unlovely is{' '}
+          <Link href="https://github.com/backmeupplz/unlovely/">
+            open source
+          </Link>
+          !
+        </BodyText>
       </div>
     </div>
   )

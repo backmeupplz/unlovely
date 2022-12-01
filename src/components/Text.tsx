@@ -6,6 +6,7 @@ import {
   fontWeight,
   gradientColorStops,
   textColor,
+  textDecoration,
   wordBreak,
 } from 'classnames/tailwind'
 import ChildrenProp from 'models/ChildrenProp'
@@ -28,4 +29,18 @@ const bodyText = classnames(
 )
 export function BodyText({ children }: ChildrenProp) {
   return <p className={bodyText}>{children}</p>
+}
+
+const link = classnames(textDecoration('underline'))
+export function Link({
+  children,
+  href,
+}: ChildrenProp & {
+  href: string
+}) {
+  return (
+    <a className={link} href={href} rel="noreferrer noopener" target="_blank">
+      {children}
+    </a>
+  )
 }

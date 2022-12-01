@@ -12,7 +12,7 @@ import ChildrenProp from 'models/ChildrenProp'
 const root = classnames(
   container('container'),
   margin('mx-auto'),
-  padding('pb-10', 'pt-4', 'px-4'),
+  padding('p-4'),
   maxWidth('max-w-7xl'),
   height('h-screen'),
   maxHeight('max-h-screen')
