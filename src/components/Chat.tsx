@@ -52,7 +52,6 @@ export default function () {
       if (current) {
         const { scrollTop, scrollHeight, clientHeight } = current
         const scrollBottom = scrollHeight - scrollTop - clientHeight
-        console.log(scrollBottom)
         setScrollEnabled(scrollBottom < 1)
       }
     }
