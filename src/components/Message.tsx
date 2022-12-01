@@ -1,5 +1,6 @@
-import { BodyText } from 'components/Text'
+import { BodyText, Link } from 'components/Text'
 import { Types } from 'ably'
+import Linkify from 'linkify-react'
 import classnames, {
   backgroundColor,
   borderRadius,
@@ -28,7 +29,17 @@ export default function ({ message }: { message: Types.Message }) {
           {message.data.username || shortify(message.data.address)}
         </span>
       </div>
-      : {message.data.messageText}
+      :{' '}
+      <Linkify
+        options={{
+          defaultProtocol: 'https',
+          render: ({ attributes: { href }, content }) => {
+            return <Link href={href}>{content}</Link>
+          },
+        }}
+      >
+        {message.data.messageText}
+      </Linkify>
     </BodyText>
   )
 }

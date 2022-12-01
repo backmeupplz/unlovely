@@ -12729,6 +12729,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"linkify-react@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "linkify-react@npm:4.0.2"
+  peerDependencies:
+    linkifyjs: ^4.0.0
+    react: ">= 15.0.0"
+  checksum: f13001fac1dd5b16643ac8e4d5a85098615922e0d5d9a56ad523cb3199a6139d4f1c28d2ff6e03de01884f825a95c969e85e53448afbdb14133afe6b545923d6
+  languageName: node
+  linkType: hard
+
+"linkifyjs@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "linkifyjs@npm:4.0.2"
+  checksum: b457d6c8ce1817645764969d9420358fad19b3576399ce4dc96a846fe953d022f7ec4d8362a0895d4b7db374c5563febc075fb7080f5f058479b9fb6d6b64285
+  languageName: node
+  linkType: hard
+
 "loader-runner@npm:^4.2.0":
   version: 4.2.0
   resolution: "loader-runner@npm:4.2.0"
@@ -17899,6 +17916,8 @@ __metadata:
     eslint-plugin-sort-imports-es6-autofix: ^0.6.0
     ethers: ^5.7.2
     graphql: ^16.6.0
+    linkify-react: ^4.0.2
+    linkifyjs: ^4.0.2
     postcss: ^8.4.19
     preact: ^10.11.3
     prettier: ^2.8.0

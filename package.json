@@ -31,6 +31,8 @@
     "amazon-ivs-player": "^1.14.0",
     "ethers": "^5.7.2",
     "graphql": "^16.6.0",
+    "linkify-react": "^4.0.2",
+    "linkifyjs": "^4.0.2",
     "preact": "^10.11.3",
     "randomcolor": "^0.6.2",
     "react-autosize-textarea": "^7.1.0",
