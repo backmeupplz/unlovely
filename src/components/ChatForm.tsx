@@ -1,5 +1,6 @@
 import { ArrowSmallRightIcon } from '@heroicons/react/20/solid'
 import { BodyText } from 'components/Text'
+import { ChangeEvent } from 'preact/compat'
 import { useContext, useEffect, useState } from 'preact/hooks'
 import TextareaAutosize from 'react-autosize-textarea'
 import UserContext from 'helpers/UserContext'
@@ -74,6 +75,7 @@ export default function () {
   }, [text])
   function publishText() {
     setText('')
+    if (!user) return
     void ablyChannel.publish({
       name: 'chat-message',
       data: {
@@ -97,11 +99,13 @@ export default function () {
       <div className={container}>
         <TextareaAutosize
           value={text}
-          onChange={(e: any) => setText(e.target?.value.replace('\n', ''))}
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+            setText(e.currentTarget?.value.replace('\n', ''))
+          }
           className={textArea}
           maxRows={3}
           placeholder={`${user?.username || shortify(user?.address)} says...`}
-          onKeyPress={(e: any) => {
+          onKeyPress={(e: KeyboardEvent) => {
             if (e.key === 'Enter' && isValid) {
               publishText()
             }

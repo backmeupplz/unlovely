@@ -10,7 +10,6 @@ import classnames, {
   borderWidth,
   display,
   flexDirection,
-  flexGrow,
   gap,
   height,
   justifyContent,
