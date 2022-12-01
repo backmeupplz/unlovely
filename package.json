@@ -34,8 +34,8 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
-    "@types/node": "^18.11.9",
-    "@types/video.js": "^7.3.49",
+    "@types/node": "^18.11.10",
+    "@types/video.js": "^7.3.50",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "autoprefixer": "^10.4.13",

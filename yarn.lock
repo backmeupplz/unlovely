@@ -4551,10 +4551,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.11.9":
-  version: 18.11.9
-  resolution: "@types/node@npm:18.11.9"
-  checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
+"@types/node@npm:^18.11.10":
+  version: 18.11.10
+  resolution: "@types/node@npm:18.11.10"
+  checksum: 0f60cb090b2ee91fcd3dc4311bc1ed7889b92f14644c0069f100776f86474c12eebbcc6c75bc0d7d96b975a103b4d5d6b3c22b4e88bea6e7f4e2b1bb0daf5ea8
   languageName: node
   linkType: hard
 
@@ -4643,10 +4643,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/video.js@npm:^7.3.49":
-  version: 7.3.49
-  resolution: "@types/video.js@npm:7.3.49"
-  checksum: abe498fbcc5dd45c0efdf56afc2d51bcfd18d14da76b7d6903f1cbe2ef423d155b1a00ce94ffffbba5f3409d65b41bb50a5f6988aa4dc888cda1942880af9345
+"@types/video.js@npm:^7.3.50":
+  version: 7.3.50
+  resolution: "@types/video.js@npm:7.3.50"
+  checksum: 4a0acb223db06946faac4288870121359230538c5d02af02171946dd081776a6ab70a9ac8f49de5a9f47a973be156be6066c21ea63080314c5eac4827c753233
   languageName: node
   linkType: hard
 
@@ -17685,8 +17685,8 @@ __metadata:
   dependencies:
     "@preact/preset-vite": ^2.4.0
     "@rainbow-me/rainbowkit": ^0.8.0
-    "@types/node": ^18.11.9
-    "@types/video.js": ^7.3.49
+    "@types/node": ^18.11.10
+    "@types/video.js": ^7.3.50
     "@typescript-eslint/eslint-plugin": ^5.45.0
     "@typescript-eslint/parser": ^5.45.0
     "@vitejs/plugin-react": ^2.2.0
