@@ -10,7 +10,7 @@ export default function () {
     async function fetchAndSubscribe() {
       const channel = ablyChannel
       const messages = await channel.history({ limit: 200 })
-      setMessages(messages.items)
+      setMessages(messages.items.reverse())
       setLoading(false)
       await channel.subscribe((message) => {
         setMessages((messages) => [
