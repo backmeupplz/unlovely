@@ -36,6 +36,7 @@
     "preact": "^10.11.3",
     "randomcolor": "^0.6.2",
     "react-autosize-textarea": "^7.1.0",
+    "react-embed": "^3.6.0",
     "video.js": "^7.20.3",
     "wagmi": "^0.8.8"
   },
