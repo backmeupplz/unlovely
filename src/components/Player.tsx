@@ -29,7 +29,7 @@ const container = classnames(
   flexDirection('flex-col'),
   justifyContent('justify-center'),
   alignItems('items-start'),
-  height('h-1/2', 'md:h-96'),
+  height('h-1/2', 'md:h-auto'),
   flexGrow('grow-0', 'md:grow')
 )
 export default function () {

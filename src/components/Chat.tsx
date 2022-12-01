@@ -10,11 +10,14 @@ import classnames, {
   borderWidth,
   display,
   flexDirection,
+  flexGrow,
   gap,
   height,
+  inset,
   justifyContent,
   overflow,
   padding,
+  position,
   width,
 } from 'classnames/tailwind'
 import useMessages from 'hooks/useMessages'
@@ -30,14 +33,17 @@ const container = classnames(
   width('md:w-1/2', 'lg:w-1/3'),
   padding('p-3'),
   borderRadius('rounded'),
-  height('h-1/2', 'md:h-96')
+  height('h-1/2', 'md:h-full')
 )
 const chatContainer = classnames(
   display('flex'),
   flexDirection('flex-col'),
   gap('gap-2'),
-  overflow('overflow-y-scroll')
+  overflow('overflow-y-scroll'),
+  flexGrow('grow'),
+  position('relative')
 )
+const messagesContainer = classnames(position('absolute'), inset('inset-0'))
 const messageContanier = classnames(
   padding('py-1', 'px-2'),
   backgroundColor('bg-indigo-900'),
@@ -73,10 +79,12 @@ export default function () {
         <BodyText>Chat:{loading && ' (loading...)'}</BodyText>
       </div>
       <div className={chatContainer} ref={chatContainerRef}>
-        {messages.map((message) => (
-          <Message message={message} key={message.id} />
-        ))}
-        <div ref={messagesEndRef} />
+        <div className={messagesContainer}>
+          {messages.map((message) => (
+            <Message message={message} key={message.id} />
+          ))}
+          <div ref={messagesEndRef} />
+        </div>
       </div>
       {!loading && <ChatForm />}
     </div>
