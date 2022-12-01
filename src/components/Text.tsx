@@ -6,6 +6,7 @@ import {
   fontWeight,
   gradientColorStops,
   textColor,
+  wordBreak,
 } from 'classnames/tailwind'
 import ChildrenProp from 'models/ChildrenProp'
 
@@ -21,7 +22,10 @@ export function LogoText({ children }: ChildrenProp) {
   return <p className={logoText}>{children}</p>
 }
 
-const bodyText = classnames(textColor('text-gray-300'))
+const bodyText = classnames(
+  textColor('text-gray-300'),
+  wordBreak('break-words')
+)
 export function BodyText({ children }: ChildrenProp) {
   return <p className={bodyText}>{children}</p>
 }

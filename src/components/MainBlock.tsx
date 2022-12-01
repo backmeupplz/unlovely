@@ -10,6 +10,7 @@ import classnames, {
   gap,
   height,
   justifyContent,
+  maxHeight,
 } from 'classnames/tailwind'
 
 const container = classnames(
@@ -18,30 +19,39 @@ const container = classnames(
   justifyContent('justify-center'),
   alignItems('items-stretch'),
   gap('gap-4'),
-  height('h-full')
+  height('h-full'),
+  maxHeight('max-h-full')
 )
-const topContainer = classnames(
+const logoContainer = classnames(
   display('flex'),
   flexDirection('flex-row'),
   justifyContent('justify-between'),
-  alignItems('items-center')
+  alignItems('items-center'),
+  maxHeight('max-h-full')
 )
-const bottomContainer = classnames(
+const innerContainer = classnames(
   display('flex'),
   flexDirection('flex-col', 'md:flex-row'),
   justifyContent('justify-center'),
   alignItems('items-stretch'),
   gap('gap-4'),
-  flexGrow('grow')
+  flexGrow('grow'),
+  maxHeight('max-h-full')
 )
+const visibleUnderMd = display('flex', 'md:hidden')
+const hiddenUnderMd = display('hidden', 'md:flex')
 export default function () {
   return (
     <div className={container}>
-      <div className={topContainer}>
+      <div className={classnames(logoContainer, hiddenUnderMd)}>
         <LogoText>Unlovely</LogoText>
         <ConnectButton showBalance={false} />
       </div>
-      <div className={bottomContainer}>
+      <div className={innerContainer}>
+        <div className={classnames(logoContainer, visibleUnderMd)}>
+          <LogoText>Unlovely</LogoText>
+          <ConnectButton showBalance={false} />
+        </div>
         <Player />
         <Chat />
       </div>
