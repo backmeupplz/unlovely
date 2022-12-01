@@ -1,5 +1,5 @@
 import { BodyText } from 'components/Text'
-import { useEffect, useRef } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import Message from 'components/Message'
 import classnames, {
   alignItems,
@@ -38,14 +38,33 @@ const chatContainer = classnames(
 )
 export default function () {
   const { messages, loading } = useMessages()
+  const [scrollEnabled, setScrollEnabled] = useState(true)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const chatContainerRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages])
+    if (scrollEnabled) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [messages, scrollEnabled])
+  useEffect(() => {
+    const current = chatContainerRef.current
+    const handleScroll = () => {
+      if (current) {
+        const { scrollTop, scrollHeight, clientHeight } = current
+        const scrollBottom = scrollHeight - scrollTop - clientHeight
+        console.log(scrollBottom)
+        setScrollEnabled(scrollBottom < 1)
+      }
+    }
+    current?.addEventListener('scroll', handleScroll)
+    return () => {
+      current?.removeEventListener('scroll', handleScroll)
+    }
+  }, [chatContainerRef])
   return (
     <div className={container}>
       <BodyText>Chat:{loading && ' (loading...)'}</BodyText>
-      <div className={chatContainer}>
+      <div className={chatContainer} ref={chatContainerRef}>
         {messages.map((message) => (
           <Message message={message} key={message.id} />
         ))}
