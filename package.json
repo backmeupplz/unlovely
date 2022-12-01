@@ -23,15 +23,19 @@
     ]
   },
   "dependencies": {
-    "@types/video.js": "^7.3.49",
+    "@rainbow-me/rainbowkit": "^0.8.0",
     "@vitejs/plugin-react": "^2.2.0",
+    "ably": "^1.2.33",
     "amazon-ivs-player": "^1.14.0",
+    "ethers": "^5.7.2",
     "preact": "^10.11.3",
-    "video.js": "^7.20.3"
+    "video.js": "^7.20.3",
+    "wagmi": "^0.8.8"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
     "@types/node": "^18.11.9",
+    "@types/video.js": "^7.3.49",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "autoprefixer": "^10.4.13",

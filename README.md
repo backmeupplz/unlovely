@@ -1,6 +1,6 @@
 # Unlovely
 
-Evil twin of Unlonely.
+Evil twin of Unlonely
 
 ## Local launch
 
