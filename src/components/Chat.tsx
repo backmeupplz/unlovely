@@ -53,32 +53,32 @@ export default function () {
   const { messages, loading } = useMessages()
   const [scrollEnabled, setScrollEnabled] = useState(true)
   const messagesEndRef = useRef<HTMLDivElement>(null)
-  const chatContainerRef = useRef<HTMLDivElement>(null)
+  // const chatContainerRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (scrollEnabled) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
   }, [messages, scrollEnabled])
-  useEffect(() => {
-    const current = chatContainerRef.current
-    const handleScroll = () => {
-      if (current) {
-        const { scrollTop, scrollHeight, clientHeight } = current
-        const scrollBottom = scrollHeight - scrollTop - clientHeight
-        setScrollEnabled(scrollBottom < 1)
-      }
-    }
-    current?.addEventListener('scroll', handleScroll)
-    return () => {
-      current?.removeEventListener('scroll', handleScroll)
-    }
-  }, [chatContainerRef])
+  // useEffect(() => {
+  //   const current = chatContainerRef.current
+  //   const handleScroll = () => {
+  //     if (current) {
+  //       const { scrollTop, scrollHeight, clientHeight } = current
+  //       const scrollBottom = scrollHeight - scrollTop - clientHeight
+  //       setScrollEnabled(scrollBottom < 1)
+  //     }
+  //   }
+  //   current?.addEventListener('scroll', handleScroll)
+  //   return () => {
+  //     current?.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [chatContainerRef])
   return (
     <div className={container}>
       <div className={messageContanier}>
         <BodyText>Chat:{loading && ' (loading...)'}</BodyText>
       </div>
-      <div className={chatContainer} ref={chatContainerRef}>
+      <div className={chatContainer}>
         <div className={messagesContainer}>
           {messages.map((message) => (
             <Message message={message} key={message.id} />
