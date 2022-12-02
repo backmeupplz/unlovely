@@ -53,7 +53,7 @@ export default function ({ message }: { message: Types.Message }) {
           {message.data.messageText}
         </Linkify>
       </BodyText>
-      {!!urls.length && <Embed isDark url={urls[0].href} />}
+      {/* {!!urls.length && <Embed isDark url={urls[0].href} />} */}
     </div>
   )
 }

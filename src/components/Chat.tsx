@@ -79,7 +79,7 @@ export default function () {
         <BodyText>Chat:{loading && ' (loading...)'}</BodyText>
       </div>
       <div className={chatContainer}>
-        <div className={messagesContainer}>
+        <div className={messagesContainer} ref={chatContainerRef}>
           {messages.map((message) => (
             <Message message={message} key={message.id} />
           ))}
