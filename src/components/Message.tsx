@@ -1,7 +1,6 @@
 import * as linkify from 'linkifyjs'
 import { BodyText, Link } from 'components/Text'
 import { Types } from 'ably'
-import Embed from 'react-embed'
 import Linkify from 'linkify-react'
 import classnames, {
   alignItems,
@@ -53,7 +52,6 @@ export default function ({ message }: { message: Types.Message }) {
           {message.data.messageText}
         </Linkify>
       </BodyText>
-      {/* {!!urls.length && <Embed isDark url={urls[0].href} />} */}
     </div>
   )
 }
