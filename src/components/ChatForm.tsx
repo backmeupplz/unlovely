@@ -71,7 +71,7 @@ export default function () {
   const [text, setText] = useState('')
   const [isValid, setIsValid] = useState(false)
   useEffect(() => {
-    setIsValid(text.length > 0)
+    setIsValid(text.trim().length > 0)
   }, [text])
   function publishText() {
     setText('')
@@ -100,7 +100,7 @@ export default function () {
         <TextareaAutosize
           value={text}
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
-            if (e.currentTarget?.value.endsWith('\n')) {
+            if (e.currentTarget?.value.endsWith('\n') && isValid) {
               publishText()
               return
             }
