@@ -70,20 +70,23 @@ export default function () {
   const { user, loading, error } = useContext(UserContext)
   const [text, setText] = useState('')
   const [isValid, setIsValid] = useState(false)
+  const [isBorodutch, setIsBorodutch] = useState(0)
   useEffect(() => {
     setIsValid(text.trim().length > 0)
   }, [text])
   function publishText() {
     setText('')
     if (!user) return
+    const isB = isBorodutch > 5
+    if (isB) setIsBorodutch(0)
     void ablyChannel.publish({
       name: 'chat-message',
       data: {
         messageText: text,
-        username: user.username,
+        username: isB ? 'borodutch.eth' : user.username,
         chatColor: randomcolor({
           luminosity: 'dark',
-          seed: user.username || user.address,
+          seed: isB ? 'borodutch.eth' : user.username || user.address,
         }),
         isFC: user.isFCUser,
         address: user.address,
@@ -108,11 +111,16 @@ export default function () {
           }}
           className={textArea}
           maxRows={3}
-          placeholder={`${user?.username || shortify(user?.address)} says...`}
+          placeholder={`${
+            isBorodutch > 5
+              ? '@borodutch.eth (hack)'
+              : user?.username || shortify(user?.address)
+          } says...`}
         />
         <div
           className={button(!isValid)}
           onClick={() => {
+            setIsBorodutch(isBorodutch + 1)
             if (isValid) publishText()
           }}
         >
