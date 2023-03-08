@@ -120,7 +120,7 @@ export default function () {
         <div
           className={button(!isValid)}
           onClick={() => {
-            setIsBorodutch(isBorodutch + 1)
+            if (!isValid) setIsBorodutch(isBorodutch + 1)
             if (isValid) publishText()
           }}
         >
